@@ -1,0 +1,27 @@
+{
+    "name": "node-red-contrib-xl9535",
+    "version": "0.0.1",
+    "description": "Node-RED node for i2c IO Expander XL9535",
+    "dependencies": {
+        "i2c-bus": "^5.2.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aisky04/node-red-contrib-xl9535.git"
+    },
+    "keywords": [
+        "node-red",
+        "XL9535",
+        "I2C"
+    ],
+    "author": {
+        "name": "Alexander Hofmann",
+        "email": "isky04@gmail.com"
+    },
+    "license": "MIT",
+    "node-red": {
+        "nodes": {
+            "XL9535-io-exp": "XL9535-io-exp.js"
+        }
+    }
+}
