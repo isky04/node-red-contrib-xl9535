@@ -6,12 +6,12 @@
 
   <div class="form-row">
       <label for="node-input-pin"><i class="fa fa-microchip"></i> Pin Number </label>
-      <input type="number" id="node-input-pin" min=0 max=7 />
+      <input type="number" id="node-input-pin" min=1 max=16 />
   </div>
 
   <div class="form-row">
     <label for="node-input-busno"><i class="fa fa-random"></i> Bus (dev/i2c*) </label>
-    <input type="number" id="node-input-bus" min=0 max=7 />
+    <input type="number" id="node-input-bus" min=0 max=30 />
   </div>
 
   <div class="form-row">
@@ -22,16 +22,16 @@
 </script>
 
 <script type="text/javascript">
-  RED.nodes.registerType("IO Read", {
+  RED.nodes.registerType("i2c IO Read", {
     category: "XL9535",
-    color: "#F3E4D4",
+    color: "#87CEFA",
     icon: "i2c.png",
     defaults: {
       name: { value: "", required: false },
       bus: {
         value: 1, required: true,
         validate: function (input) {
-          return input <= 7 && input >= 0
+          return input <= 29 && input >= 0
         }
       },
       address: {
@@ -42,7 +42,7 @@
       },
       pin: {
         value: undefined, required: true, validate: function (input) {
-          return input <= 7 && input >= 0
+          return input <= 16 && input >= 1
         }
       }
     },
@@ -58,11 +58,11 @@
   });
 </script>
 
-<script type="text/x-red" data-help-name="IO Read">
+<script type="text/x-red" data-help-name="i2c IO Read">
     <p> Node-RED node for i2c IO Expander XL9535 </p>
 </script>
 
-<script type="text/x-red" data-template-name="IO Write">
+<script type="text/x-red" data-template-name="i2c IO Write">
   <div class="form-row">
       <label for="node-input-name"><i class="fa fa-tag"></i> Name </label>
       <input type="text" id="node-input-name" />
@@ -70,12 +70,12 @@
 
   <div class="form-row">
       <label for="node-input-pin"><i class="fa fa-microchip"></i> Pin Number </label>
-      <input type="number" id="node-input-pin" min=0 max=7 />
+      <input type="number" id="node-input-pin" min=1 max=16 />
   </div>
 
   <div class="form-row">
     <label for="node-input-busno"><i class="fa fa-random"></i> Bus (dev/i2c*) </label>
-    <input type="number" id="node-input-bus" min=0 max=7 />
+    <input type="number" id="node-input-bus" min=0 max=29 />
   </div>
 
   <div class="form-row">
@@ -86,15 +86,17 @@
 </script>
 
 <script type="text/javascript">
-  RED.nodes.registerType("IO Write", {
+  RED.nodes.registerType("i2c IO Write", {
     category: "XL9535",
-    color: "#F3E4D4",
+    color: "#87CEFA",
     icon: "i2c.png",
     defaults: {
       name: { value: "", required: false },
-      bus: {
-        value: 1, required: true, validate: function (input) {
-          return input <= 7 && input >= 0
+      bus: 
+      {
+        value: 1, required: true, validate: function (input) 
+        {
+          return input <= 16 && input >= 1
         }
       },
       address: {
@@ -105,14 +107,14 @@
       },
       pin: {
         value: undefined, required: true, validate: function (input) {
-          return input <= 15 && input >= 0
+          return input <= 16 && input >= 1
         }
       }
     },
     outputs: 1,
     inputs: 1,
     label: function () {
-      return this.name || (this.pin ? "i2c IO Exp Write " + this.pin : "IO Write");
+      return this.name || (this.pin ? "i2c IO Exp Write " + this.pin : "i2c IO Write");
     },
     labelStyle: function () { return this.name ? "node_label_italic" : ""; },
     outputLabels: ["io reads"],
@@ -120,6 +122,6 @@
   });
 </script>
 
-<script type="text/x-red" data-help-name="IO Write">
+<script type="text/x-red" data-help-name="i2c IO Write">
     <p> Node-RED node for i2c IO Expander XL9535</p>
 </script>
