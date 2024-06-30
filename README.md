@@ -1,4 +1,4 @@
-# node-red-contrib-xl9535
+# node-red-xl9535
 
 Node-Red node für i2c IO Relais Erweiterung mit XL9535(China clone des TCA95535) Chip.<br>
 Die Relais Karte habe ich mir bei [Aliexpress](https://de.aliexpress.com/i/1005005883903139.html) besorgt
@@ -16,7 +16,7 @@ und betreibe sie mit meinem VanPiCore von [PeKaWay](https://pekaway.de/collectio
 Install with Node-Red Palette Manager or run npm command:
 ```
 cd ~/.node-red
-npm install node-red-contrib-xl9535
+npm install @isky04/node-red-xl9535
 ```
 ## Usage
 
@@ -27,5 +27,5 @@ for output inject any value to trigger reading<br>
 
 ## Getestet mit
 - Raspberry Pi4 mit VanPi OS 2.0.0.
-- node-red 3.9
+- node-red 4.0.1
 
