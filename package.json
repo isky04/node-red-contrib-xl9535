@@ -21,7 +21,7 @@
     "license": "MIT",
     "node-red": {
         "nodes": {
-            "XL9535-io-exp": "XL9535-io-exp.js"
+            "XL9535-io-ext": "XL9535-io-ext.js"
         }
     }
 }
