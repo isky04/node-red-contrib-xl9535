@@ -1,5 +1,5 @@
 {
-    "name": "node-red-contrib-xl9535",
+    "name": "@isky04/node-red-xl9535",
     "version": "0.0.3",
     "description": "Node-RED node for i2c IO Expander XL9535",
     "dependencies": {
